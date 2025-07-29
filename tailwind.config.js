@@ -12,7 +12,12 @@ export default {
   			'gradient-y': 'gradient-y 15s ease infinite',
   			'gradient-xy': 'gradient-xy 15s ease infinite',
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'bounce-gentle': 'bounce-gentle 2s infinite',
+  			'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+  			'wiggle': 'wiggle 1s ease-in-out infinite',
+  			'slide-up': 'slide-up 0.5s ease-out',
+  			'slide-down': 'slide-down 0.5s ease-out'
   		},
   		keyframes: {
   			'gradient-y': {
@@ -60,6 +65,28 @@ export default {
   				to: {
   					height: '0'
   				}
+  			},
+  			'bounce-gentle': {
+  				'0%, 100%': {
+  					transform: 'translateY(-5%)',
+  					'animation-timing-function': 'cubic-bezier(0.8, 0, 1, 1)'
+  				},
+  				'50%': {
+  					transform: 'translateY(0)',
+  					'animation-timing-function': 'cubic-bezier(0, 0, 0.2, 1)'
+  				}
+  			},
+  			'wiggle': {
+  				'0%, 100%': { transform: 'rotate(-3deg)' },
+  				'50%': { transform: 'rotate(3deg)' }
+  			},
+  			'slide-up': {
+  				'0%': { transform: 'translateY(100%)', opacity: '0' },
+  				'100%': { transform: 'translateY(0)', opacity: '1' }
+  			},
+  			'slide-down': {
+  				'0%': { transform: 'translateY(-100%)', opacity: '0' },
+  				'100%': { transform: 'translateY(0)', opacity: '1' }
   			}
   		},
   		borderRadius: {
@@ -117,7 +144,47 @@ export default {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
+  			},
+  			// Todo app specific colors
+  			todo: {
+  				primary: '#10b981', // Green
+  				secondary: '#3b82f6', // Blue
+  				accent: '#8b5cf6', // Purple
+  				warning: '#f59e0b', // Amber
+  				danger: '#ef4444', // Red
+  				success: '#22c55e', // Green
+  				info: '#06b6d4' // Cyan
+  			},
+  			priority: {
+  				low: '#22c55e',
+  				medium: '#f59e0b',
+  				high: '#ef4444',
+  				urgent: '#dc2626'
+  			},
+  			category: {
+  				work: '#3b82f6',
+  				personal: '#10b981',
+  				health: '#f59e0b',
+  				learning: '#8b5cf6',
+  				shopping: '#ec4899',
+  				finance: '#06b6d4'
   			}
+  		},
+  		fontFamily: {
+  			sans: ['Inter', 'system-ui', 'sans-serif'],
+  			heading: ['Poppins', 'system-ui', 'sans-serif']
+  		},
+  		spacing: {
+  			'18': '4.5rem',
+  			'88': '22rem',
+  			'128': '32rem'
+  		},
+  		boxShadow: {
+  			'todo': '0 4px 6px -1px rgba(16, 185, 129, 0.1), 0 2px 4px -1px rgba(16, 185, 129, 0.06)',
+  			'todo-lg': '0 10px 15px -3px rgba(16, 185, 129, 0.1), 0 4px 6px -2px rgba(16, 185, 129, 0.05)',
+  			'priority-high': '0 4px 6px -1px rgba(239, 68, 68, 0.1), 0 2px 4px -1px rgba(239, 68, 68, 0.06)',
+  			'priority-medium': '0 4px 6px -1px rgba(245, 158, 11, 0.1), 0 2px 4px -1px rgba(245, 158, 11, 0.06)',
+  			'priority-low': '0 4px 6px -1px rgba(34, 197, 94, 0.1), 0 2px 4px -1px rgba(34, 197, 94, 0.06)'
   		}
   	}
   },
